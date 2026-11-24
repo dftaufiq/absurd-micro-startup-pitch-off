@@ -5,8 +5,14 @@
 // AND more commercially believable wins.
 import { mkdirSync, writeFileSync } from "node:fs";
 
+// The pitch: one sentence, exactly 170 characters (limit is 200).
+// The concrete numbers (37 trials, 10% cut) are the specificity the judge
+// compares against; Gary the human is the believability hook.
 const PITCH =
   "We cancel your lazy agent's 37 forgotten free trials before they renew, keep 10% of what we save, and every cancellation is signed by Gary, a human who definitely exists.";
 
-mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", PITCH, "utf8");
+const OUTPUT_DIR = "/output";
+const OUTPUT_PATH = `${OUTPUT_DIR}/entry.txt`;
+
+mkdirSync(OUTPUT_DIR, { recursive: true });
+writeFileSync(OUTPUT_PATH, PITCH, "utf8");
